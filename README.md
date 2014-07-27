@@ -6,13 +6,16 @@ Coursera Project for Getting and Cleaning Data.  The goal is to prepare tidy dat
 
 Variables
 ----------
-subject          activity           tBodyAcc-mean()-X tBodyAcc-mean()-Y  tBodyAcc-mean()-Z
- Min.   : 1.00   Length:40          Min.   :0.2657    Min.   :-0.02095   Min.   :-0.1183  
- 1st Qu.: 8.75   Class :character   1st Qu.:0.2725    1st Qu.:-0.01860   1st Qu.:-0.1109  
- Median :15.50   Mode  :character   Median :0.2748    Median :-0.01800   Median :-0.1087  
- Mean   :15.65                      Mean   :0.2746    Mean   :-0.01755   Mean   :-0.1089  
- 3rd Qu.:22.25                      3rd Qu.:0.2773    3rd Qu.:-0.01633   3rd Qu.:-0.1068  
- Max.   :30.00                      Max.   :0.2808    Max.   :-0.01299   Max.   :-0.1010  
+
+
+|subject|         activity         |tBodyAcc-mean()-X |tBodyAcc-mean()-Y |tBodyAcc-mean()-Z|
+|-----------------|----------------|------------------|------------------|------------------|
+| Min.   : 1.00   |Length:40       |   Min.   :0.2657|    Min.   :-0.02095|   Min.   :-0.1183|  
+| 1st Qu.: 8.75   |Class :character|   1st Qu.:0.2725|   1st Qu.:-0.01860 |  1st Qu.:-0.1109|  
+| Median :15.50   |Mode  :character|   Median :0.2748|    Median :-0.01800|   Median :-0.1087|  
+| Mean   :15.65   |                |  Mean   :0.2746 |   Mean   :-0.01755 |  Mean   :-0.1089  |
+| 3rd Qu.:22.25   |                |  3rd Qu.:0.2773 |   3rd Qu.:-0.01633 |  3rd Qu.:-0.1068  |
+| Max.   :30.00   |                |  Max.   :0.2808 |   Max.   :-0.01299 |  Max.   :-0.1010  |
  
  tBodyAcc-std()-X  tBodyAcc-std()-Y  tBodyAcc-std()-Z  tGravityAcc-mean()-X tGravityAcc-mean()-Y
  Min.   :-0.9865   Min.   :-0.9649   Min.   :-0.9589   Min.   :0.4753       Min.   :-0.242392   
