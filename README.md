@@ -18,11 +18,16 @@ The run_analysis.R file assumes the following data sets from http://archive.ics.
 Example
 ---------
 source(run_analysis.R)
+
 tidySet2 <- prepareData()
+
+
 
 Output
 -------
 A tidy dataset containing the averages of each std() and mean() variable (grouped by activity and subject) for both the training and testing datasets
+Two data sets are written to the working directory as CSV files
+
 
 
 Feature Selection 
@@ -219,8 +224,8 @@ Variables
 |3rd Qu.:-0.6299         |3rd Qu.:-0.6515        |3rd Qu.: 0.01348            |3rd Qu.:-0.7360            |
 |Max.   :-0.2677         |Max.   :-0.3468        |Max.   : 0.15472            |Max.   :-0.4408            |
 
-|fBodyBodyGyroJerkMag-std() |fBodyBodyGyroJerkMag-MeanFreq() |angle(tBodyAcc|Mean,gravity)|
-|-----------------|----------------|----------------------|
+|fBodyBodyGyroJerkMag-std() |fBodyBodyGyroJerkMag-MeanFreq() |angle(tBodyAccMean,gravity)|
+|-----------------------------|-------------------------------|---------------------------|
 |Min.   :-0.9877            |Min.   :-0.12202                |Min.   :-0.028019          |
 |1st Qu.:-0.8798            |1st Qu.: 0.07901                |1st Qu.:-0.001016          |
 |Median :-0.8106            |Median : 0.12490                |Median : 0.005806          |

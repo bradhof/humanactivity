@@ -1,3 +1,14 @@
+*-------------------------------------------------------------------------------------------------
+* FUNCTION cleanAndJoin
+* Takes a set of datasets and joins them to form a tidy subset of data
+* x - the features measures dataset
+* y - the activity dataset for X
+* subjects - the subsets dataset for x
+* aLables - the labels for the activities
+* columnHeaders - the column headers for the features
+* Returns a tidy dataset that merges the input datasets with only std() and mean() variables
+*-------------------------------------------------------------------------------------------------
+     
 cleanAndJoin <- function(x,y,subjects,aLabels,columnHeaders)
 {
      #first, set the headers for x
@@ -20,6 +31,24 @@ cleanAndJoin <- function(x,y,subjects,aLabels,columnHeaders)
 }
 
 
+*-------------------------------------------------------------------------------------------------
+* FUNCTION prepareData
+* Assumes the following data sets from are loaded in the working directory
+* http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+* -test/x_test.txt - the main testing dataset for the features
+* -test/y_test.txt - the list of activities for each row in x_test.txt
+* -test/subjectTest - the list of subjects in the test set
+* -train/x_train.txt - the main traing dataset for the features
+* -train/y_train.txt - the list of activities for each row in x_train.txt
+* -train/subject_train.txt - the list of subjects in the training set
+* -activity_labels.txt - the activity labels (WALKING, etc)
+* -features.txt - the column headers for the features
+*
+* Returns a tidy dataset containing the averages of each std() and mean() variable 
+* (grouped by activity and subject) for both the training and testing datasets
+* Two data sets are also written to the working directory as CSV files
+*-------------------------------------------------------------------------------------------------
+     
 prepareData <- function(){
      #read in the data sets
      #NOTE: as the assignment suggests, assume the data files are under the current working directory
