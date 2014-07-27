@@ -3,32 +3,52 @@ Human Activity for Samsung devices - Tidy Data Set
 Coursera Project for Getting and Cleaning Data.  The goal is to prepare tidy data that can be used for later analysi
 The final output (tidy_set2.txt) is a data set that contains the average values for the following measurements
 
+Usage
+=========
+The run_analysis.R file assumes the following data sets from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones are loaded in the working directory
+* test/x_test.txt - the main testing dataset for the features
+* test/y_test.txt - the list of activities for each row in x_test.txt
+* test/subjectTest - the list of subjects in the test set
+* train/x_train.txt - the main traing dataset for the features
+* train/y_train.txt - the list of activities for each row in x_train.txt
+* train/subject_train.txt - the list of subjects in the training set
+* activity_labels.txt - the activity labels (WALKING, etc)
+* features.txt - the column headers for the features
+
+Example
+---------
+source(run_analysis.R)
+tidySet2 <- prepareData()
+
+Output
+-------
+A tidy dataset containing the averages of each std() and mean() variable (grouped by activity and subject) for both the training and testing datasets
+
+
 Feature Selection 
 =================
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a |Median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
-
-*tBodyAcc-XYZ
-*tGravityAcc-XYZ
-*tBodyAccJerk-XYZ
-*tBodyGyro-XYZ
-*tBodyGyroJerk-XYZ
-*tBodyAccMag
-*tGravityAccMag
-*tBodyAccJerkMag
-*tBodyGyroMag
-*tBodyGyroJerkMag
-*fBodyAcc-XYZ
-*fBodyAccJerk-XYZ
-*fBodyGyro-XYZ
-*fBodyAccMag
-*fBodyAccJerkMag
-*fBodyGyroMag
-*fBodyGyroJerkMag
+These signals were used to estimate variables of the feature vector for each pattern:  "-XYZ" is used to denote 3-axial signals in the X, Y and Z directions.
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 * mean(): Mean value
@@ -208,8 +228,8 @@ Variables
 |3rd Qu.:-0.7593            |3rd Qu.: 0.16360                |3rd Qu.: 0.013689          |
 |Max.   :-0.4604            |Max.   : 0.28443                |Max.   : 0.037608          |
  
-|angle(tBodyAccJerk|Mean),gravity|Mean) |angle(tBodyGyro|Mean,gravity|Mean)|
-|-----------------|----------------|
+|angle(tBodyAccJerkMean),gravityMean) |angle(tBodyGyroMean,gravityMean)|
+|-----------------|----------------|----------------------------------------|
 |Min.   :-0.044776                    |Min.   :-0.060297               |
 |1st Qu.:-0.012863                    |1st Qu.:-0.014180               |
 |Median : 0.001496                    |Median : 0.008418               |
@@ -217,7 +237,7 @@ Variables
 |3rd Qu.: 0.016379                    |3rd Qu.: 0.051760               |
 |Max.   : 0.048694                    |Max.   : 0.118882               |
  
-|angle(tBodyGyroJerk|Mean,gravity|Mean) |angle(X,gravity|Mean) |angle(Y,gravity|Mean) |angle(Z,gravity|Mean)|
+|angle(tBodyGyroJerkMean,gravityMean) |angle(X,gravityMean) |angle(Y,gravityMean) |angle(Z,gravityMean)|
 |------------------------------------|----------------------|---------------------|--------------------------|
 |Min.   :-0.06449                     |Min.   :-0.7784      |Min.   :-0.11928     |Min.   :-0.20900    |
 |1st Qu.:-0.02437                     |1st Qu.:-0.5615      |1st Qu.: 0.01983     |1st Qu.:-0.09181    |
